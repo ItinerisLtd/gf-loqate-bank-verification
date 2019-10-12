@@ -8,13 +8,8 @@ workflows:
     jobs:
       - composer/install:
           name: style-check
+          # Because of wp.org plugin SVN pre-commit hook.
           executor: composer/php-72
           post-steps:
             - composer/exec:
                 command: style:check
-
-      - composer/install:
-          name: phpstan-analyse
-          post-steps:
-            - composer/exec:
-                command: phpstan:analyse
