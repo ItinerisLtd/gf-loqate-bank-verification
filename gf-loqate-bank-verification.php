@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name:     GF Loqate Bank Verification
  * Plugin URI:      https://github.com/ItinerisLtd/gf-loqate-bank-verification

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Itineris\GFLoqateBankVerification;
@@ -9,7 +10,12 @@ class AddOn extends GFAddOn
 {
     private static $_instance = null;
     protected $_version = Plugin::VERSION;
-    protected $_min_gravityforms_version = MinimumRequirements::GRAVITY_FORMS_VERSION; // TODO: Doesn't seem working.
+    /**
+     * @todo: Doesn't seem working.
+     *
+     * @var string
+     */
+    protected $_min_gravityforms_version = MinimumRequirements::GRAVITY_FORMS_VERSION;
     protected $_slug = 'gf-loqate-bank-verification';
     protected $_path = 'gf-loqate-bank-verification/gf-loqate-bank-verification.php';
     protected $_full_path = __FILE__;

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Itineris\GFLoqateBankVerification;
@@ -54,7 +55,7 @@ class Validator
         // Fail the validation for the entire form.
         $validationResult['is_valid'] = false;
 
-        // Mark the specific fields that failed and add a custom validation message
+        // Mark the specific fields that failed and add a custom validation message.
         array_map(function (GF_Field $field): void {
             $field->failed_validation = true;
             $field->validation_message = $this->validationMessage;
@@ -74,12 +75,6 @@ class Validator
             && ! RGFormsModel::is_field_hidden($form, $field, []);
     }
 
-    /**
-     * @param string   $cssClass
-     * @param GF_Field ...$fields
-     *
-     * @return GF_Field[]
-     */
     protected function getFields(string $cssClass, GF_Field ...$fields): array
     {
         return array_filter($fields, function (GF_Field $field) use ($cssClass): bool {

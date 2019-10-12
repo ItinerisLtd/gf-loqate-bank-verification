@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Itineris\GFLoqateBankVerification\API;
@@ -29,18 +30,12 @@ class BankAccountValidator
             && $this->getResult($response);
     }
 
-    /**
-     * @param string $sortCode
-     * @param string $accountNumber
-     *
-     * @return array|\WP_Error
-     */
     protected function fetchResponse(string $sortCode, string $accountNumber)
     {
         $url = add_query_arg([
-            'Key' => urlencode($this->key),
-            'SortCode' => urlencode($sortCode),
-            'AccountNumber' => urlencode($accountNumber),
+            'Key' => rawurlencode($this->key),
+            'SortCode' => rawurlencode($sortCode),
+            'AccountNumber' => rawurlencode($accountNumber),
         ], static::ENDPOINT);
 
         return wp_remote_get($url);
