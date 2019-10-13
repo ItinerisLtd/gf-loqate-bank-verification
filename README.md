@@ -5,29 +5,34 @@
 [![WordPress Plugin Rating](https://img.shields.io/wordpress/plugin/rating/gf-loqate-bank-verification?style=flat-square)](https://wordpress.org/plugins/gf-loqate-bank-verification)
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/itinerisltd/gf-loqate-bank-verification.svg?style=flat-square)](https://packagist.org/packages/itinerisltd/gf-loqate-bank-verification)
 [![WordPress Plugin: Tested WP Version](https://img.shields.io/wordpress/plugin/tested/gf-loqate-bank-verification?style=flat-square)](https://wordpress.org/plugins/gf-loqate-bank-verification)
-[![Packagist Downloads](https://img.shields.io/packagist/dt/itinerisltd/gf-loqate-bank-verification.svg?label=packagist%20downloads&style=flat-square)](https://packagist.org/packages/itinerisltd/gf-loqate-bank-verification)
-[![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/gf-loqate-bank-verification?label=wp.org%20downloads&style=flat-square)](https://wordpress.org/plugins/gf-loqate-bank-verification)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/itinerisltd/gf-loqate-bank-verification.svg?label=packagist%20downloads&style=flat-square)](https://packagist.org/packages/itinerisltd/gf-loqate-bank-verification/stats)
+[![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/gf-loqate-bank-verification?label=wp.org%20downloads&style=flat-square)](https://wordpress.org/plugins/gf-loqate-bank-verification/advanced/)
 [![GitHub License](https://img.shields.io/github/license/itinerisltd/gf-loqate-bank-verification.svg?style=flat-square)](https://github.com/ItinerisLtd/gf-loqate-bank-verification/blob/master/LICENSE)
 [![Hire Itineris](https://img.shields.io/badge/Hire-Itineris-ff69b4.svg?style=flat-square)](https://www.itineris.co.uk/contact/)
 [![Twitter Follow](https://img.shields.io/twitter/follow/itineris_ltd?style=flat-square)](https://twitter.com/itineris_ltd)
-[![Twitter Follow](https://img.shields.io/twitter/follow/tangrufus?style=flat-square)](https://twitter.com/tangrufus)
-
-[GF Loqate Bank Verification](https://github.com/ItinerisLtd/gf-loqate-bank-verification) provides a clean, simple way to configure [the WordPress-bundled PHPMailer library](https://core.trac.wordpress.org/browser/trunk/src/wp-includes/class-phpmailer.php), allowing you to quickly get started sending mail through a local or cloud based service of your choice.
+[![Twitter Follow](https://img.shields.io/twitter/follow/TangRufus?style=flat-square)](https://twitter.com/tangrufus)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
 - [Goal](#goal)
+- [Usage](#usage)
+  - [Get your service key from Loqate](#get-your-service-key-from-loqate)
+  - [GravityForms Plugin Setting](#gravityforms-plugin-setting)
+  - [GravityForms Form Fields Setting](#gravityforms-form-fields-setting)
 - [Minimum Requirements](#minimum-requirements)
 - [Installation](#installation)
   - [Composer (Recommended)](#composer-recommended)
-  - [Build from Source](#build-from-source)
-- [Usage](#usage)
+  - [wordpress.org (WP CLI)](#wordpressorg-wp-cli)
+  - [wordpress.org](#wordpressorg)
+  - [Build from Source (Not Recommended)](#build-from-source-not-recommended)
 - [FAQ](#faq)
+  - [Does it support checking for Direct Debit capability?](#does-it-support-checking-for-direct-debit-capability)
+  - [Does it cache Loqate API responses?](#does-it-cache-loqate-api-responses)
   - [Will you add support for older PHP versions?](#will-you-add-support-for-older-php-versions)
-  - [It looks awesome. Where can I find some more goodies like this?](#it-looks-awesome-where-can-i-find-some-more-goodies-like-this)
-  - [This isn't on wp.org. Where can I give a :star::star::star::star::star: review?](#this-isnt-on-wporg-where-can-i-give-a-starstarstarstarstar-review)
+  - [It looks awesome. Where can I find more goodies like this?](#it-looks-awesome-where-can-i-find-more-goodies-like-this)
+  - [Where can I give :star::star::star::star::star: reviews?](#where-can-i-give-starstarstarstarstar-reviews)
 - [Testing](#testing)
 - [Feedback](#feedback)
 - [Change Log](#change-log)
@@ -39,24 +44,74 @@
 
 ## Goal
 
+[GF Loqate Bank Verification](https://github.com/ItinerisLtd/gf-loqate-bank-verification) verifies [GravitForms](https://www.gravityforms.com/) bank details with [Loqate bank verification API](https://www.loqate.com/resources/support/apis/BankAccountValidation/Interactive/Validate/2/).
+
+It validates the bank details (branch sort codes and bank account numbers):
+- indicates whether the account number and sortcode are valid
+- indicates whether the account can accept direct debits. Certain accounts (e.g. savings) will not accept direct debits
+
+## Usage
+
+### Get your service key from Loqate
+
+1. Register an [Loqate](https://www.loqate.com) account
+2. Add **Bank Verification**
+3. Get the **Service key**
+
+![screenshot-1](./assets/screenshot-1.png)
+
+### GravityForms Plugin Setting
+
+1. Head to **Form** » **Settings** » **Bank Verification**
+2. Enter your Loqate bank verification service key
+
+A green check :white_check_mark: appears if the service key is valid.
+
+![screenshot-2](./assets/screenshot-2.png)
+
+### GravityForms Form Fields Setting
+
+1. Add 2 **Single Line Text** fields
+  - Sort Code
+  - Account Number
+2. Set both fields to be **required**
+3. Set their **Custom CSS Class** to:
+  - `gf-loqate-bank-verification-validate-sort-code`
+  - `gf-loqate-bank-verification-validate-account-number`
+
+![screenshot-3](./assets/screenshot-3.png)
+![screenshot-4](./assets/screenshot-4.png)
+
 ## Minimum Requirements
 
 - PHP v7.2
-- WordPress v5.2
-- GravityForms v2.4.14.4
+- WordPress v5.2.3
+- [GravitForms](https://www.gravityforms.com/) v2.4.14.4
 
 ## Installation
 
 ### Composer (Recommended)
 
-```sh-session
+```bash
 composer require itinerisltd/gf-loqate-bank-verification
 ```
 
-### Build from Source
+### wordpress.org (WP CLI)
 
-```sh-session
+```bash
+wp plugin install gf-loqate-bank-verification
+```
+
+### wordpress.org
+
+Download from https://wordpress.org/plugins/gf-loqate-bank-verification 
+Then, install `gf-loqate-bank-verification.zip` [as usual](https://codex.wordpress.org/Managing_Plugins#Installing_Plugins).
+
+### Build from Source (Not Recommended)
+
+```bash
 # Make sure you use the same PHP version as remote servers.
+# Building inside docker images is recommanded.
 php -v
 
 # Checkout source code
@@ -70,9 +125,23 @@ composer release:build
 
 Then, install `release/gf-loqate-bank-verification.zip` [as usual](https://codex.wordpress.org/Managing_Plugins#Installing_Plugins).
 
-## Usage
-
 ## FAQ
+
+### Does it support checking for Direct Debit capability?
+
+Yes. Certain accounts (e.g. savings) will not accept direct debits. To verify bank details are both correct and Direct Debit capable, set the fields' **Custom CSS Class** to:
+- `gf-loqate-bank-verification-validate-sort-code-direct-debit-capable`
+- `gf-loqate-bank-verification-validate-account-number-direct-debit-capable`
+
+### Does it cache Loqate API responses?
+
+Yes. Loqate API responses are cached in [WordPress transients](https://codex.wordpress.org/Transients_API) for an hour.
+
+To clear caches:
+
+```bash
+wp transient delete --all
+```
 
 ### Will you add support for older PHP versions?
 
@@ -80,7 +149,7 @@ Never! This plugin will only work on [actively supported PHP versions](https://s
 
 Don't use it on **end of life** or **security fixes only** PHP versions.
 
-### It looks awesome. Where can I find some more goodies like this?
+### It looks awesome. Where can I find more goodies like this?
 
 - Articles on [Itineris' blog](https://www.itineris.co.uk/blog/)
 - More projects on [Itineris' GitHub profile](https://github.com/itinerisltd)
@@ -88,10 +157,11 @@ Don't use it on **end of life** or **security fixes only** PHP versions.
 - Follow [@itineris_ltd](https://twitter.com/itineris_ltd) and [@TangRufus](https://twitter.com/tangrufus) on Twitter
 - Hire [Itineris](https://www.itineris.co.uk/services/) to build your next awesome site
 
-### This isn't on wp.org. Where can I give a :star::star::star::star::star: review?
+### Where can I give :star::star::star::star::star: reviews?
 
 Thanks! Glad you like it. It's important to let my boss knows somebody is using this project. Please consider:
 
+- leave a 5-star review on [wordpress.org](https://wordpress.org/support/plugin/gf-loqate-bank-verification/reviews/)
 - tweet something good with mentioning [@itineris_ltd](https://twitter.com/itineris_ltd) and [@TangRufus](https://twitter.com/tangrufus)
 - :star: star this [Github repo](https://github.com/ItinerisLtd/gf-loqate-bank-verification)
 - :eyes: watch this [Github repo](https://github.com/ItinerisLtd/gf-loqate-bank-verification)
@@ -101,8 +171,7 @@ Thanks! Glad you like it. It's important to let my boss knows somebody is using 
 
 ## Testing
 
-```sh-session
-composer phpstan:analyse
+```bash
 composer style:check
 ```
 
