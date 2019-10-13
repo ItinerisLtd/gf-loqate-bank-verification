@@ -1,13 +1,16 @@
 # GF Loqate Bank Verification
 
 [![CircleCI](https://circleci.com/gh/ItinerisLtd/gf-loqate-bank-verification.svg?style=svg)](https://circleci.com/gh/ItinerisLtd/gf-loqate-bank-verification)
-[![Packagist Version](https://img.shields.io/packagist/v/itinerisltd/gf-loqate-bank-verification.svg)](https://packagist.org/packages/itinerisltd/gf-loqate-bank-verification)
-[![PHP from Packagist](https://img.shields.io/packagist/php-v/itinerisltd/gf-loqate-bank-verification.svg)](https://packagist.org/packages/itinerisltd/gf-loqate-bank-verification)
-[![Packagist Downloads](https://img.shields.io/packagist/dt/itinerisltd/gf-loqate-bank-verification.svg)](https://packagist.org/packages/itinerisltd/gf-loqate-bank-verification)
-[![GitHub License](https://img.shields.io/github/license/itinerisltd/gf-loqate-bank-verification.svg)](https://github.com/ItinerisLtd/gf-loqate-bank-verification/blob/master/LICENSE)
-[![Hire Itineris](https://img.shields.io/badge/Hire-Itineris-ff69b4.svg)](https://www.itineris.co.uk/contact/)
-![Twitter Follow](https://img.shields.io/twitter/follow/itineris_ltd?style=plastic)
-![Twitter Follow](https://img.shields.io/twitter/follow/tangrufus?style=plastic)
+[![Packagist Version](https://img.shields.io/packagist/v/itinerisltd/gf-loqate-bank-verification.svg?label=release&style=flat-square)](https://packagist.org/packages/itinerisltd/gf-loqate-bank-verification)
+[![WordPress Plugin Rating](https://img.shields.io/wordpress/plugin/rating/gf-loqate-bank-verification?style=flat-square)](https://wordpress.org/plugins/gf-loqate-bank-verification)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/itinerisltd/gf-loqate-bank-verification.svg?style=flat-square)](https://packagist.org/packages/itinerisltd/gf-loqate-bank-verification)
+[![WordPress Plugin: Tested WP Version](https://img.shields.io/wordpress/plugin/tested/gf-loqate-bank-verification?style=flat-square)](https://wordpress.org/plugins/gf-loqate-bank-verification)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/itinerisltd/gf-loqate-bank-verification.svg?label=packagist%20downloads&style=flat-square)](https://packagist.org/packages/itinerisltd/gf-loqate-bank-verification)
+[![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/gf-loqate-bank-verification?label=wp.org%20downloads&style=flat-square)](https://wordpress.org/plugins/gf-loqate-bank-verification)
+[![GitHub License](https://img.shields.io/github/license/itinerisltd/gf-loqate-bank-verification.svg?style=flat-square)](https://github.com/ItinerisLtd/gf-loqate-bank-verification/blob/master/LICENSE)
+[![Hire Itineris](https://img.shields.io/badge/Hire-Itineris-ff69b4.svg?style=flat-square)](https://www.itineris.co.uk/contact/)
+[![Twitter Follow](https://img.shields.io/twitter/follow/itineris_ltd?style=flat-square)](https://twitter.com/itineris_ltd)
+[![Twitter Follow](https://img.shields.io/twitter/follow/tangrufus?style=flat-square)](https://twitter.com/tangrufus)
 
 [GF Loqate Bank Verification](https://github.com/ItinerisLtd/gf-loqate-bank-verification) provides a clean, simple way to configure [the WordPress-bundled PHPMailer library](https://core.trac.wordpress.org/browser/trunk/src/wp-includes/class-phpmailer.php), allowing you to quickly get started sending mail through a local or cloud based service of your choice.
 
