@@ -3,7 +3,7 @@
 /**
  * Plugin Name:     GF Loqate Bank Verification
  * Plugin URI:      https://github.com/ItinerisLtd/gf-loqate-bank-verification
- * Description:     Verify GravitForms bank details with Loqate bank verification API.
+ * Description:     Verify Gravity Forms bank details with Loqate bank verification API.
  * Version:         0.0.1
  * Author:          Itineris Limited
  * Author URI:      https://itineris.co.uk
