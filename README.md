@@ -12,6 +12,8 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/itineris_ltd?style=flat-square)](https://twitter.com/itineris_ltd)
 [![Twitter Follow](https://img.shields.io/twitter/follow/TangRufus?style=flat-square)](https://twitter.com/tangrufus)
 
+Verify Gravity Forms bank details with Loqate bank verification API.
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
@@ -19,8 +21,8 @@
 - [Goal](#goal)
 - [Usage](#usage)
   - [Get your service key from Loqate](#get-your-service-key-from-loqate)
-  - [GravityForms Plugin Setting](#gravityforms-plugin-setting)
-  - [GravityForms Form Fields Setting](#gravityforms-form-fields-setting)
+  - [Gravity Forms Plugin Setting](#gravity-forms-plugin-setting)
+  - [Gravity Forms Form Fields Setting](#gravity-forms-form-fields-setting)
 - [Minimum Requirements](#minimum-requirements)
 - [Installation](#installation)
   - [Composer (Recommended)](#composer-recommended)
@@ -44,7 +46,7 @@
 
 ## Goal
 
-[GF Loqate Bank Verification](https://github.com/ItinerisLtd/gf-loqate-bank-verification) verifies [GravitForms](https://www.gravityforms.com/) bank details with [Loqate bank verification API](https://www.loqate.com/resources/support/apis/BankAccountValidation/Interactive/Validate/2/).
+[GF Loqate Bank Verification](https://github.com/ItinerisLtd/gf-loqate-bank-verification) verifies [Gravity Forms](https://www.gravityforms.com/) bank details with [Loqate bank verification API](https://www.loqate.com/resources/support/apis/BankAccountValidation/Interactive/Validate/2/).
 
 It validates the bank details (branch sort codes and bank account numbers):
 - indicates whether the account number and sortcode are valid
@@ -58,35 +60,35 @@ It validates the bank details (branch sort codes and bank account numbers):
 2. Add **Bank Verification**
 3. Get the **Service key**
 
-![screenshot-1](./assets/screenshot-1.png)
+![Loqate Bank Verification Server Key](./assets/screenshot-1.png)
 
-### GravityForms Plugin Setting
+### Plugin Setting
 
 1. Head to **Form** » **Settings** » **Bank Verification**
-2. Enter your Loqate bank verification service key
+2. Enter your Loqate bank verification **service key**
 
 A green check :white_check_mark: appears if the service key is valid.
 
-![screenshot-2](./assets/screenshot-2.png)
+![Plugin Setting](./assets/screenshot-2.png)
 
-### GravityForms Form Fields Setting
+### Form Fields Setting
 
 1. Add 2 **Single Line Text** fields
   - Sort Code
   - Account Number
-2. Set both fields to be **required**
+2. Mark both fields **required**
 3. Set their **Custom CSS Class** to:
   - `gf-loqate-bank-verification-validate-sort-code`
   - `gf-loqate-bank-verification-validate-account-number`
 
-![screenshot-3](./assets/screenshot-3.png)
-![screenshot-4](./assets/screenshot-4.png)
+![Form Fields Setting - Sort Code](./assets/screenshot-3.png)
+![Form Fields Setting - Account Number](./assets/screenshot-4.png)
 
 ## Minimum Requirements
 
 - PHP v7.2
 - WordPress v5.2.3
-- [GravitForms](https://www.gravityforms.com/) v2.4.14.4
+- [Gravity Forms](https://www.Gravity Forms.com/) v2.4.14.4
 
 ## Installation
 

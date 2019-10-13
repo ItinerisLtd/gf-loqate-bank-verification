@@ -1,15 +1,17 @@
 <?php
 
 /**
- * Plugin Name:     GF Loqate Bank Verification
- * Plugin URI:      https://github.com/ItinerisLtd/gf-loqate-bank-verification
- * Description:     Verify GravitForms bank details with Loqate bank verification API.
- * Version:         0.0.1
- * Author:          Itineris Limited
- * Author URI:      https://itineris.co.uk
- * License:         MIT
- * License URI:     https://opensource.org/licenses/MIT
- * Text Domain:     gf-loqate-bank-verification
+ * Plugin Name:       GF Loqate Bank Verification
+ * Plugin URI:        https://github.com/ItinerisLtd/gf-loqate-bank-verification
+ * Description:       Verify Gravity Forms bank details with Loqate bank verification API.
+ * Version:           0.0.1
+ * Requires at least: 5.2.3
+ * Requires PHP:      7.2
+ * Author:            Itineris Limited
+ * Author URI:        https://www.itineris.co.uk
+ * License:           MIT
+ * License URI:       https://opensource.org/licenses/MIT
+ * Text Domain:       gf-loqate-bank-verification
  */
 
 declare(strict_types=1);

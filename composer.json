@@ -1,10 +1,12 @@
 {
     "name": "itinerisltd/gf-loqate-bank-verification",
     "type": "wordpress-plugin",
-    "description": "Verify GravitForms bank details with Loqate bank verification API.",
+    "description": "Verify Gravity Forms bank details with Loqate bank verification API.",
     "keywords": [
         "bank-verification",
-        "gravotyforms",
+        "direct-debit",
+        "gravity-forms",
+        "gravityforms",
         "loqate",
         "vaildation",
         "wordpress",
