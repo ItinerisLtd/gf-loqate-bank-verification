@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.1.0](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.1.0) (2019-10-14)
+**Merged pull requests:**
+
+- Prepare for wp.org review [\#5](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/5) ([TangRufus](https://github.com/TangRufus))
+- Add `array\_key\_first` polyfill for PHP 7.2 [\#4](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/4) ([TangRufus](https://github.com/TangRufus))
+-  CircleCI: Style checks on different php version; Publish to github release when tagged [\#3](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/3) ([TangRufus](https://github.com/TangRufus))
+- Update readme [\#2](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/2) ([TangRufus](https://github.com/TangRufus))
+- Readme: Add badges [\#1](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/1) ([TangRufus](https://github.com/TangRufus))
 
 
 
