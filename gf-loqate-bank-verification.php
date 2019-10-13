@@ -25,4 +25,16 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
 
+// Polyfill `array_key_first` for PHP 7.2.
+if (! function_exists('array_key_first')) {
+    function array_key_first(array $arr)
+    {
+        foreach ($arr as $key => $_) {
+            return $key;
+        }
+        
+        return null;
+    }
+}
+
 Plugin::run();

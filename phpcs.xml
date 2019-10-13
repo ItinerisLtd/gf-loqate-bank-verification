@@ -41,6 +41,11 @@
         </properties>
     </rule>
 
+    <rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
+        <!-- Beacuse of the `array_key_first` polyfill for PHP 7.2-->
+        <exclude-pattern>/gf-loqate-bank-verification.php</exclude-pattern>
+    </rule>
+
     <rule ref="Squiz.Commenting.FileComment.MissingPackageTag">
         <exclude-pattern>/gf-loqate-bank-verification.php</exclude-pattern>
     </rule>
