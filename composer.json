@@ -4,6 +4,7 @@
     "description": "Verify Gravity Forms bank details with Loqate bank verification API.",
     "keywords": [
         "bank-verification",
+        "direct-debit",
         "gravity-forms",
         "gravityforms",
         "loqate",
