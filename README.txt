@@ -5,7 +5,7 @@ Tags: gravity forms, gravityforms, loqate, bank verification, direct debit
 Requires at least: 5.2.3
 Tested up to: 5.3
 Requires PHP: 7.2
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
