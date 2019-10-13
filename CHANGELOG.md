@@ -1,8 +1,16 @@
 # Change Log
 
-## [0.1.0](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.1.0) (2019-10-14)
+## [0.1.1](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.1.1) (2019-10-14)
+[Full Changelog](https://github.com/ItinerisLtd/gf-loqate-bank-verification/compare/0.1.0...0.1.1)
+
 **Merged pull requests:**
 
+- CircleCI: Fix `publish-to-github-releases` not building [\#7](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/7) ([TangRufus](https://github.com/TangRufus))
+
+## [0.1.0](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.1.0) (2019-10-13)
+**Merged pull requests:**
+
+- Version bump 0.1.0 [\#6](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/6) ([TangRufus](https://github.com/TangRufus))
 - Prepare for wp.org review [\#5](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/5) ([TangRufus](https://github.com/TangRufus))
 - Add `array\_key\_first` polyfill for PHP 7.2 [\#4](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/4) ([TangRufus](https://github.com/TangRufus))
 -  CircleCI: Style checks on different php version; Publish to github release when tagged [\#3](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/3) ([TangRufus](https://github.com/TangRufus))
