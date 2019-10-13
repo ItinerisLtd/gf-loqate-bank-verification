@@ -70,6 +70,9 @@ workflows:
                 root: ~/project
                 paths:
                   - release/*.zip
+          filters:
+            tags:
+              only: /.*/
 
       - itinerisltd/publish-to-github-releases:
           requires:
