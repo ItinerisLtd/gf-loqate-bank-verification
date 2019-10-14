@@ -78,8 +78,8 @@ A green check :white_check_mark: appears if the service key is valid.
   - Account Number
 2. Mark both fields **required**
 3. Set their **Custom CSS Class** to:
-  - `gf-loqate-bank-verification-validate-sort-code`
-  - `gf-loqate-bank-verification-validate-account-number`
+  - `gflbv-sort-code-is-correct`
+  - `gflbv-account-number-is-correct`
 
 ![Form Fields Setting - Sort Code](./assets/screenshot-3.png)
 ![Form Fields Setting - Account Number](./assets/screenshot-4.png)
@@ -132,8 +132,8 @@ Then, install `release/gf-loqate-bank-verification.zip` [as usual](https://codex
 ### Does it support checking for Direct Debit capability?
 
 Yes. Certain accounts (e.g. savings) will not accept direct debits. To verify bank details are both correct and Direct Debit capable, set the fields' **Custom CSS Class** to:
-- `gf-loqate-bank-verification-validate-sort-code-direct-debit-capable`
-- `gf-loqate-bank-verification-validate-account-number-direct-debit-capable`
+- `gflbv-sort-code-is-correct gflbv-sort-code-direct-debit-capable`
+- `gflbv-account-number-is-correct gflbv-account-number-direct-debit-capable`
 
 ### Does it cache Loqate API responses?
 

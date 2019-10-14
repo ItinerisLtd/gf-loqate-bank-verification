@@ -22,21 +22,23 @@ class Plugin
         add_filter(
             'gform_validation',
             static::makeValidationClosure(
-                'gf-loqate-bank-verification-validate-sort-code',
-                'gf-loqate-bank-verification-validate-account-number',
+                'gflbv-sort-code-is-correct',
+                'gflbv-account-number-is-correct',
                 esc_html__('Invalid bank account details.', 'gf-loqate-bank-verification'),
                 BankAccountValidator::IS_CORRECT
-            )
+            ),
+            1000
         );
 
         add_filter(
             'gform_validation',
             static::makeValidationClosure(
-                'gf-loqate-bank-verification-validate-sort-code-direct-debit-capable',
-                'gf-loqate-bank-verification-validate-account-number-direct-debit-capable',
+                'gflbv-sort-code-direct-debit-capable',
+                'gflbv-account-number-direct-debit-capable',
                 esc_html__('Invalid direct debit account details.', 'gf-loqate-bank-verification'),
                 BankAccountValidator::IS_DIRECT_DEBIT_CAPABLE
-            )
+            ),
+            500
         );
     }
 
