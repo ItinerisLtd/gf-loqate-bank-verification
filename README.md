@@ -87,7 +87,7 @@ A green check :white_check_mark: appears if the service key is valid.
 ## Minimum Requirements
 
 - PHP v7.2
-- WordPress v5.2.3
+- WordPress v4.9.10
 - [Gravity Forms](https://www.Gravity Forms.com/) v2.4.14.4
 
 ## Installation

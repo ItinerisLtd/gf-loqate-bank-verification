@@ -5,7 +5,7 @@
  * Plugin URI:        https://github.com/ItinerisLtd/gf-loqate-bank-verification
  * Description:       Verify Gravity Forms bank details with Loqate bank verification API.
  * Version:           0.2.0
- * Requires at least: 5.2.3
+ * Requires at least: 4.9.10
  * Requires PHP:      7.2
  * Author:            Itineris Limited
  * Author URI:        https://www.itineris.co.uk
