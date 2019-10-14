@@ -1,10 +1,18 @@
 # Change Log
 
+## [0.2.0](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.2.0) (2019-10-14)
+[Full Changelog](https://github.com/ItinerisLtd/gf-loqate-bank-verification/compare/0.1.2...0.2.0)
+
+**Merged pull requests:**
+
+- Allow multiple predicates on single field [\#14](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/14) ([TangRufus](https://github.com/TangRufus))
+
 ## [0.1.2](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.1.2) (2019-10-14)
 [Full Changelog](https://github.com/ItinerisLtd/gf-loqate-bank-verification/compare/0.1.1...0.1.2)
 
 **Merged pull requests:**
 
+- Version bump 0.1.2 [\#12](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/12) ([TangRufus](https://github.com/TangRufus))
 - CircleCI: Fix `publish-to-github-releases` not building again and again [\#11](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/11) ([TangRufus](https://github.com/TangRufus))
 - CircleCI: Fix `publish-to-github-releases` not building again [\#9](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/9) ([TangRufus](https://github.com/TangRufus))
 
