@@ -78,7 +78,7 @@ class Validator
     protected function getFields(string $cssClass, GF_Field ...$fields): array
     {
         return array_filter($fields, function (GF_Field $field) use ($cssClass): bool {
-            return $cssClass === $field->cssClass;
+            return strpos($field->cssClass, $cssClass) !== false;
         });
     }
 

@@ -37,8 +37,8 @@ It validates the bank details (branch sort codes and bank account numbers):
         - Account Number
     1. Mark both fields **required**
     1. Set their **Custom CSS Class** to:
-        - `gf-loqate-bank-verification-validate-sort-code`
-        - `gf-loqate-bank-verification-validate-account-number`
+        - `gflbv-sort-code-is-correct`
+        - `gflbv-account-number-is-correct`
 
 ## For Developers
 
@@ -55,8 +55,8 @@ Fork the plugin on [GitHub](https://github.com/ItinerisLtd/gf-loqate-bank-verifi
 ### Does it support checking for Direct Debit capability?
 
 Yes. Certain accounts (e.g. savings) will not accept direct debits. To verify bank details are both correct and Direct Debit capable, set the fields' **Custom CSS Class** to:
-- `gf-loqate-bank-verification-validate-sort-code-direct-debit-capable`
-- `gf-loqate-bank-verification-validate-account-number-direct-debit-capable`
+- `gflbv-sort-code-is-correct gflbv-sort-code-direct-debit-capable`
+- `gflbv-account-number-is-correct gflbv-account-number-direct-debit-capable`
 
 ### Does it cache Loqate API responses?
 
