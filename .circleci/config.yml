@@ -83,6 +83,6 @@ workflows:
                 at: ~/project
           filters:
             branches:
-              ignore: /.*/
+              only: master
             tags:
               only: /.*/
