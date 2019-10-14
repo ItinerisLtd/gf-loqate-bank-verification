@@ -1,10 +1,18 @@
 # Change Log
 
-## [0.1.1](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.1.1) (2019-10-14)
+## [0.1.2](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.1.2) (2019-10-14)
+[Full Changelog](https://github.com/ItinerisLtd/gf-loqate-bank-verification/compare/0.1.1...0.1.2)
+
+**Merged pull requests:**
+
+- CircleCI: Fix `publish-to-github-releases` not building again [\#9](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/9) ([TangRufus](https://github.com/TangRufus))
+
+## [0.1.1](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.1.1) (2019-10-13)
 [Full Changelog](https://github.com/ItinerisLtd/gf-loqate-bank-verification/compare/0.1.0...0.1.1)
 
 **Merged pull requests:**
 
+- Version bump 0.1.1 [\#8](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/8) ([TangRufus](https://github.com/TangRufus))
 - CircleCI: Fix `publish-to-github-releases` not building [\#7](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/7) ([TangRufus](https://github.com/TangRufus))
 
 ## [0.1.0](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.1.0) (2019-10-13)
