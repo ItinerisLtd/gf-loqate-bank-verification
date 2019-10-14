@@ -82,7 +82,7 @@ workflows:
             - attach_workspace:
                 at: ~/project
           filters:
-            tags:
-              only: /.*/
             branches:
               ignore: /.*/
+            tags:
+              only: /.*/
