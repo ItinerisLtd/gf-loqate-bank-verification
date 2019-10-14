@@ -12,7 +12,7 @@ class MinimumRequirements
     {
         return [
             'wordpress' => [
-                'version' => '5.2.3',
+                'version' => '4.9.10',
             ],
             'php' => [
                 'version' => '7.2',

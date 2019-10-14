@@ -2,7 +2,7 @@
 
 Contributors: itinerisltd, tangrufus
 Tags: gravity forms, gravityforms, loqate, bank verification, direct debit
-Requires at least: 5.2.3
+Requires at least: 4.9.10
 Tested up to: 5.3
 Requires PHP: 7.2
 Stable tag: 0.2.0
@@ -49,7 +49,7 @@ Fork the plugin on [GitHub](https://github.com/ItinerisLtd/gf-loqate-bank-verifi
 ### What are the minimum requirements
 
 - PHP v7.2
-- WordPress v5.2.3
+- WordPress v4.9.10
 - [Gravity Forms](https://www.Gravity Forms.com/) v2.4.14.4
 
 ### Does it support checking for Direct Debit capability?
