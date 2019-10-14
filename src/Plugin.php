@@ -11,7 +11,7 @@ use Itineris\GFLoqateBankVerification\API\BankAccountValidator;
 
 class Plugin
 {
-    public const VERSION = '0.2.0';
+    public const VERSION = '0.2.1';
 
     public static function run(): void
     {
