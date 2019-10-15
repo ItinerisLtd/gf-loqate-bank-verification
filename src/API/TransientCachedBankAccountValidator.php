@@ -6,12 +6,12 @@ namespace Itineris\GFLoqateBankVerification\API;
 
 class TransientCachedBankAccountValidator extends BankAccountValidator
 {
-    protected const TRANSIENT_KEY_PREFIX = 'gf-loqate-bank-verification';
+    protected const TRANSIENT_KEY_PREFIX = 'gflbv_';
     protected const TRANSIENT_TTL = 3600; // 1 hour in seconds.
 
     protected function fetchResponse(string $sortCode, string $accountNumber)
     {
-        $transientKey = static::TRANSIENT_KEY_PREFIX . '_' . md5($sortCode . ';' . $accountNumber);
+        $transientKey = static::TRANSIENT_KEY_PREFIX . md5($sortCode . ';' . $accountNumber);
         $response = get_transient($transientKey);
 
         if (false === $response) {

@@ -8,6 +8,11 @@ use Closure;
 use GFAddOn;
 use GFForms;
 use Itineris\GFLoqateBankVerification\API\BankAccountValidator;
+use Itineris\GFLoqateBankVerification\API\TransientCachedBankAccountValidator;
+use Itineris\GFLoqateBankVerification\Validators\AbstractValidator;
+use Itineris\GFLoqateBankVerification\Validators\AccountNumberValidator;
+use Itineris\GFLoqateBankVerification\Validators\DirectDebitCapableValidator;
+use Itineris\GFLoqateBankVerification\Validators\SortCodeValidator;
 
 class Plugin
 {
@@ -24,10 +29,19 @@ class Plugin
             static::makeValidationClosure(
                 'gflbv-sort-code-is-correct',
                 'gflbv-account-number-is-correct',
-                esc_html__('Invalid bank account details.', 'gf-loqate-bank-verification'),
-                BankAccountValidator::IS_CORRECT
-            ),
-            1000
+                esc_html__('Invalid sort code details.', 'gf-loqate-bank-verification'),
+                SortCodeValidator::class
+            )
+        );
+
+        add_filter(
+            'gform_validation',
+            static::makeValidationClosure(
+                'gflbv-sort-code-is-correct',
+                'gflbv-account-number-is-correct',
+                esc_html__('Invalid account number details.', 'gf-loqate-bank-verification'),
+                AccountNumberValidator::class
+            )
         );
 
         add_filter(
@@ -35,10 +49,9 @@ class Plugin
             static::makeValidationClosure(
                 'gflbv-sort-code-direct-debit-capable',
                 'gflbv-account-number-direct-debit-capable',
-                esc_html__('Invalid direct debit account details.', 'gf-loqate-bank-verification'),
-                BankAccountValidator::IS_DIRECT_DEBIT_CAPABLE
-            ),
-            500
+                esc_html__('Account is not direct debit capable.', 'gf-loqate-bank-verification'),
+                DirectDebitCapableValidator::class
+            )
         );
     }
 
@@ -46,13 +59,13 @@ class Plugin
         string $sortCodeCssClass,
         string $accountNumberCssClass,
         string $validationMessage,
-        string $predicate
+        string $klass
     ): Closure {
         return function (array $validationResult) use (
             $sortCodeCssClass,
             $accountNumberCssClass,
             $validationMessage,
-            $predicate
+            $klass
         ): array {
             $addOn = AddOn::get_instance();
             $key = (string) $addOn->get_plugin_setting(SettingsFields::SERVICE_KEY_NAME);
@@ -62,13 +75,12 @@ class Plugin
                 return $validationResult;
             }
 
-            $bankAccountValidator = new BankAccountValidator($key, $predicate);
-
-            $validator = new Validator(
+            /** @var AbstractValidator $validator */
+            $validator = new $klass(
                 $sortCodeCssClass,
                 $accountNumberCssClass,
-                $validationMessage,
-                $bankAccountValidator
+                new TransientCachedBankAccountValidator($key),
+                $validationMessage
             );
 
             return $validator->validate($validationResult);

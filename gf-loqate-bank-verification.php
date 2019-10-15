@@ -16,7 +16,7 @@
 
 declare(strict_types=1);
 
-namespace Itineris\GFLoqateBankVerification;
+//namespace Itineris\GFLoqateBankVerification;
 
 // If this file is called directly, abort.
 if (! defined('WPINC')) {
@@ -39,4 +39,4 @@ if (! function_exists('array_key_first')) {
     }
 }
 
-Plugin::run();
+\Itineris\GFLoqateBankVerification\Plugin::run();
