@@ -65,6 +65,6 @@
     <!--This is because this rule gives internal error Undefined index: parenthesis_owner-->
     <rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
         <exclude-pattern>/src/Plugin.php</exclude-pattern>
-        <exclude-pattern>/src/Validator.php</exclude-pattern>
+        <exclude-pattern>/src/Validators/AbstractValidator.php</exclude-pattern>
     </rule>
 </ruleset>

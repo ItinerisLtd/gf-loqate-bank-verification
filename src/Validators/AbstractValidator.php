@@ -98,7 +98,7 @@ abstract class AbstractValidator
     /**
      * Polyfill `array_key_first` for PHP 7.2.
      *
-     * @param array $arr
+     * @param array $arr An array.
      */
     private function arrayKeyFirst(array $arr)
     {
