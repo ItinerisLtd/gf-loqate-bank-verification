@@ -32,7 +32,7 @@
         "php": "^7.2"
     },
     "require-dev": {
-        "itinerisltd/itineris-wp-coding-standards": "^0.3.0",
+        "itinerisltd/itineris-wp-coding-standards": "^0.3.1",
         "roave/security-advisories": "dev-master",
         "roots/wordpress": "^5.2"
     },
