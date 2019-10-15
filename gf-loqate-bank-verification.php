@@ -16,7 +16,7 @@
 
 declare(strict_types=1);
 
-//namespace Itineris\GFLoqateBankVerification;
+namespace Itineris\GFLoqateBankVerification;
 
 // If this file is called directly, abort.
 if (! defined('WPINC')) {
@@ -27,16 +27,4 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
 
-// Polyfill `array_key_first` for PHP 7.2.
-if (! function_exists('array_key_first')) {
-    function array_key_first(array $arr)
-    {
-        foreach ($arr as $key => $_) {
-            return $key;
-        }
-        
-        return null;
-    }
-}
-
-\Itineris\GFLoqateBankVerification\Plugin::run();
+Plugin::run();

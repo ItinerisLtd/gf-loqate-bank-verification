@@ -40,8 +40,8 @@ abstract class AbstractValidator
             return $validationResult;
         }
 
-        $sortCodeField = $sortCodeFields[array_key_first($sortCodeFields)];
-        $accountNumberField = $accountNumberFields[array_key_first($accountNumberFields)];
+        $sortCodeField = $sortCodeFields[$this->arrayKeyFirst($sortCodeFields)];
+        $accountNumberField = $accountNumberFields[$this->arrayKeyFirst($accountNumberFields)];
 
         $result = $this->check($sortCodeField, $accountNumberField);
 
@@ -95,8 +95,27 @@ abstract class AbstractValidator
         );
     }
 
+    /**
+     * Polyfill `array_key_first` for PHP 7.2.
+     *
+     * @param array $arr
+     */
+    private function arrayKeyFirst(array $arr)
+    {
+        if (function_exists('array_key_first')) {
+            return array_key_first($arr);
+        }
+
+        foreach ($arr as $key => $_) {
+            return $key;
+        }
+
+        return null;
+    }
+
     abstract protected function shouldIntercept(Result $result): bool;
 
     abstract protected function markSortCodeFieldAsFailed(GF_Field $field): void;
+
     abstract protected function markAccountNumberFieldAsFailed(GF_Field $field): void;
 }
