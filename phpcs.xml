@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="WPPHPMailer">
+<ruleset name="Plugin">
     <file>./</file>
     <exclude-pattern>/release/*</exclude-pattern>
     <exclude-pattern>/tests/*</exclude-pattern>
@@ -19,35 +19,14 @@
     <config name="installed_paths" value="vendor/wp-coding-standards/wpcs,vendor/automattic/vipwpcs,vendor/itinerisltd/itineris-wp-coding-standards"/>
 
     <!-- Use Itineris WP Coding Standards -->
-    <rule ref="Itineris">
-        <exclude name="Squiz.Commenting.FileComment.SpacingAfterOpen"></exclude>
-        <exclude name="WordPress.NamingConventions.ValidVariableName.InterpolatedVariableNotSnakeCase"></exclude>
-        <exclude name="WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase"></exclude>
-        <exclude name="WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase"></exclude>
-        <exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase"></exclude>
-    </rule>
+    <rule ref="Itineris"/>
 
-    <config name="minimum_supported_wp_version" value="5.2"/>
+    <config name="minimum_supported_wp_version" value="4.9"/>
 
     <rule ref="WordPress.WP.I18n">
         <properties>
             <property name="text_domain" type="array" value="gf-loqate-bank-verification"/>
         </properties>
-    </rule>
-
-    <rule ref="Generic.WhiteSpace.ArbitraryParenthesesSpacing">
-        <properties>
-            <property name="spacing" value="0"/>
-        </properties>
-    </rule>
-
-    <rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
-        <!-- Beacuse of the `array_key_first` polyfill for PHP 7.2-->
-        <exclude-pattern>/gf-loqate-bank-verification.php</exclude-pattern>
-    </rule>
-
-    <rule ref="Squiz.Commenting.FileComment.MissingPackageTag">
-        <exclude-pattern>/gf-loqate-bank-verification.php</exclude-pattern>
     </rule>
 
     <rule ref="PSR1.Methods.CamelCapsMethodName.NotCamelCaps">
@@ -60,11 +39,5 @@
 
     <rule ref="Squiz.Commenting.VariableComment.Missing">
         <exclude-pattern>/src/AddOn.php</exclude-pattern>
-    </rule>
-
-    <!--This is because this rule gives internal error Undefined index: parenthesis_owner-->
-    <rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
-        <exclude-pattern>/src/Plugin.php</exclude-pattern>
-        <exclude-pattern>/src/Validators/AbstractValidator.php</exclude-pattern>
     </rule>
 </ruleset>
