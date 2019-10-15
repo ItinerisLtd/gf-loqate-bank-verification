@@ -2,34 +2,29 @@
 
 declare(strict_types=1);
 
-namespace Itineris\GFLoqateBankVerification;
+namespace Itineris\GFLoqateBankVerification\Validators;
 
 use GF_Field;
 use Itineris\GFLoqateBankVerification\API\BankAccountValidator;
+use Itineris\GFLoqateBankVerification\API\Result;
 use RGFormsModel;
 
-class Validator
+abstract class AbstractValidator
 {
     /** @var string */
     protected $sortCodeCssClass;
     /** @var string */
     protected $accountNumberCssClass;
-
-    /** @var string */
-    protected $validationMessage;
-
     /** @var BankAccountValidator */
     protected $bankAccountValidator;
 
     public function __construct(
         string $sortCodeCssClass,
         string $accountNumberCssClass,
-        string $validationMessage,
         BankAccountValidator $bankAccountValidator
     ) {
         $this->sortCodeCssClass = $sortCodeCssClass;
         $this->accountNumberCssClass = $accountNumberCssClass;
-        $this->validationMessage = $validationMessage;
         $this->bankAccountValidator = $bankAccountValidator;
     }
 
@@ -45,10 +40,12 @@ class Validator
             return $validationResult;
         }
 
-        $sortCodeField = $sortCodeFields[array_key_first($sortCodeFields)];
-        $accountNumberField = $accountNumberFields[array_key_first($accountNumberFields)];
+        $sortCodeField = $sortCodeFields[$this->arrayKeyFirst($sortCodeFields)];
+        $accountNumberField = $accountNumberFields[$this->arrayKeyFirst($accountNumberFields)];
 
-        if ($this->isValid($sortCodeField, $accountNumberField)) {
+        $result = $this->check($sortCodeField, $accountNumberField);
+
+        if (! $this->shouldIntercept($result)) {
             return $validationResult;
         }
 
@@ -56,10 +53,8 @@ class Validator
         $validationResult['is_valid'] = false;
 
         // Mark the specific fields that failed and add a custom validation message.
-        array_map(function (GF_Field $field): void {
-            $field->failed_validation = true;
-            $field->validation_message = $this->validationMessage;
-        }, [$sortCodeField, $accountNumberField]);
+        $this->markSortCodeFieldAsFailed($sortCodeField);
+        $this->markAccountNumberFieldAsFailed($accountNumberField);
 
         // Assign our modified $form object back to the validation result.
         $validationResult['form'] = $form;
@@ -92,11 +87,35 @@ class Validator
         });
     }
 
-    protected function isValid(GF_Field $sortCodeField, GF_Field $accountNumberField): bool
+    protected function check(GF_Field $sortCodeField, GF_Field $accountNumberField): Result
     {
-        return $this->bankAccountValidator->isValid(
+        return $this->bankAccountValidator->getResult(
             rgpost("input_{$sortCodeField['id']}"),
             rgpost("input_{$accountNumberField['id']}")
         );
     }
+
+    /**
+     * Polyfill `array_key_first` for PHP 7.2.
+     *
+     * @param array $arr An array.
+     */
+    private function arrayKeyFirst(array $arr)
+    {
+        if (function_exists('array_key_first')) {
+            return array_key_first($arr);
+        }
+
+        foreach ($arr as $key => $_) {
+            return $key;
+        }
+
+        return null;
+    }
+
+    abstract protected function shouldIntercept(Result $result): bool;
+
+    abstract protected function markSortCodeFieldAsFailed(GF_Field $field): void;
+
+    abstract protected function markAccountNumberFieldAsFailed(GF_Field $field): void;
 }
