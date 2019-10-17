@@ -1,10 +1,18 @@
 # Change Log
 
+## [0.3.1](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.3.1) (2019-10-17)
+[Full Changelog](https://github.com/ItinerisLtd/gf-loqate-bank-verification/compare/0.3.0...0.3.1)
+
+**Merged pull requests:**
+
+- Update code standards [\#20](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/20) ([TangRufus](https://github.com/TangRufus))
+
 ## [0.3.0](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.3.0) (2019-10-15)
 [Full Changelog](https://github.com/ItinerisLtd/gf-loqate-bank-verification/compare/0.2.1...0.3.0)
 
 **Merged pull requests:**
 
+- Version bump 0.3.0 [\#19](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/19) ([TangRufus](https://github.com/TangRufus))
 - Seperate field error messages [\#18](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/18) ([TangRufus](https://github.com/TangRufus))
 
 ## [0.2.1](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.2.1) (2019-10-14)
