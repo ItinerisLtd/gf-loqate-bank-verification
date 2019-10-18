@@ -6,7 +6,7 @@ namespace Itineris\GFLoqateBankVerification\API;
 
 class TransientCachedBankAccountValidator extends BankAccountValidator
 {
-    protected const TRANSIENT_KEY_PREFIX = 'gflbv_';
+    public const TRANSIENT_KEY_PREFIX = 'gflbv_';
     protected const TRANSIENT_TTL = 3600; // 1 hour in seconds.
 
     protected function fetchResponse(string $sortCode, string $accountNumber)

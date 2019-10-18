@@ -53,28 +53,14 @@ abstract class AbstractValidator
         $validationResult['is_valid'] = false;
 
         // Mark the specific fields that failed and add a custom validation message.
-        $this->markSortCodeFieldAsFailed($sortCodeField);
-        $this->markAccountNumberFieldAsFailed($accountNumberField);
+        $this->markSortCodeFieldAsFailed($sortCodeField, $result);
+        $this->markAccountNumberFieldAsFailed($accountNumberField, $result);
 
         // Assign our modified $form object back to the validation result.
         $validationResult['form'] = $form;
 
         // Return the validation result.
         return $validationResult;
-    }
-
-    protected function isVisible(GF_Field $field, array $form, int $currentPage): bool
-    {
-        // On the current page AND the field is not hidden by GF conditional logic.
-        return $currentPage === (int) $field->pageNumber
-            && ! RGFormsModel::is_field_hidden($form, $field, []);
-    }
-
-    protected function getFields(string $cssClass, GF_Field ...$fields): array
-    {
-        return array_filter($fields, function (GF_Field $field) use ($cssClass): bool {
-            return strpos($field->cssClass, $cssClass) !== false;
-        });
     }
 
     protected function getVisibleFields(string $cssClass, array $form): array
@@ -87,12 +73,18 @@ abstract class AbstractValidator
         });
     }
 
-    protected function check(GF_Field $sortCodeField, GF_Field $accountNumberField): Result
+    protected function getFields(string $cssClass, GF_Field ...$fields): array
     {
-        return $this->bankAccountValidator->getResult(
-            rgpost("input_{$sortCodeField['id']}"),
-            rgpost("input_{$accountNumberField['id']}")
-        );
+        return array_filter($fields, function (GF_Field $field) use ($cssClass): bool {
+            return strpos($field->cssClass, $cssClass) !== false;
+        });
+    }
+
+    protected function isVisible(GF_Field $field, array $form, int $currentPage): bool
+    {
+        // On the current page AND the field is not hidden by GF conditional logic.
+        return $currentPage === (int) $field->pageNumber
+            && ! RGFormsModel::is_field_hidden($form, $field, []);
     }
 
     /**
@@ -113,9 +105,17 @@ abstract class AbstractValidator
         return null;
     }
 
+    protected function check(GF_Field $sortCodeField, GF_Field $accountNumberField): Result
+    {
+        return $this->bankAccountValidator->getResult(
+            rgpost("input_{$sortCodeField['id']}"),
+            rgpost("input_{$accountNumberField['id']}")
+        );
+    }
+
     abstract protected function shouldIntercept(Result $result): bool;
 
-    abstract protected function markSortCodeFieldAsFailed(GF_Field $field): void;
+    abstract protected function markSortCodeFieldAsFailed(GF_Field $field, Result $result): void;
 
-    abstract protected function markAccountNumberFieldAsFailed(GF_Field $field): void;
+    abstract protected function markAccountNumberFieldAsFailed(GF_Field $field, Result $result): void;
 }

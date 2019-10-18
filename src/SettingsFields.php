@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Itineris\GFLoqateBankVerification;
 
 use Itineris\GFLoqateBankVerification\API\APIKeyValidator;
+use Itineris\GFLoqateBankVerification\API\TransientCachedBankAccountValidator;
 
 class SettingsFields
 {
@@ -29,8 +30,10 @@ class SettingsFields
                             $validator = new APIKeyValidator();
                             return $validator->isValid($value);
                         },
-                        'error_message' => esc_html__('Invalid license', 'gf-loqate-bank-verification'),
                         'class' => 'medium',
+                        'validation_callback' => function () {
+                            TransientPurger::purge(TransientCachedBankAccountValidator::TRANSIENT_KEY_PREFIX);
+                        },
                     ],
                 ],
             ],

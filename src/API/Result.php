@@ -14,14 +14,14 @@ class Result
         $this->data = $data;
     }
 
-    public function get(string $key)
-    {
-        return $this->data[$key] ?? null;
-    }
-
     public function isCorrect(): bool
     {
         return true === $this->get('IsCorrect');
+    }
+
+    public function get(string $key)
+    {
+        return $this->data[$key] ?? null;
     }
 
     public function isDirectDebitCapable(): bool
@@ -37,5 +37,15 @@ class Result
     public function isInvalidAccountNumber(): bool
     {
         return 'InvalidAccountNumber' === $this->get('StatusInformation');
+    }
+
+    public function getCause(): string
+    {
+        return (string) $this->get('Cause');
+    }
+
+    public function getResolution(): string
+    {
+        return (string) $this->get('Resolution');
     }
 }

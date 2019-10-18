@@ -6,7 +6,7 @@ namespace Itineris\GFLoqateBankVerification\Validators;
 
 use Itineris\GFLoqateBankVerification\API\BankAccountValidator;
 
-trait ValidationMessageConstructTrait
+trait ValidationMessageTrait
 {
     /** @var string */
     protected $validationMessage;
@@ -19,5 +19,10 @@ trait ValidationMessageConstructTrait
     ) {
         parent::__construct($sortCodeCssClass, $accountNumberCssClass, $bankAccountValidator);
         $this->validationMessage = $validationMessage;
+    }
+
+    protected function getValidationMessage(): string
+    {
+        return $this->validationMessage;
     }
 }
