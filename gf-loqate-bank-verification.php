@@ -4,7 +4,7 @@
  * Plugin Name:       GF Loqate Bank Verification
  * Plugin URI:        https://github.com/ItinerisLtd/gf-loqate-bank-verification
  * Description:       Verify Gravity Forms bank details with Loqate bank verification API.
- * Version:           0.4.0
+ * Version:           0.4.1
  * Requires at least: 4.9.10
  * Requires PHP:      7.2
  * Author:            Itineris Limited
