@@ -13,15 +13,15 @@ Verify Gravity Forms bank details with Loqate bank verification API.
 
 == Description ==
 
-## Goal
+### Goal
 
 [GF Loqate Bank Verification](https://github.com/ItinerisLtd/gf-loqate-bank-verification) verifies [Gravity Forms](https://www.gravityforms.com/) bank details with [Loqate bank verification API](https://www.loqate.com/resources/support/apis/BankAccountValidation/Interactive/Validate/2/).
 
 It validates the bank details (branch sort codes and bank account numbers):
-- indicates whether the account number and sortcode are valid
+- indicates whether the account number and sort code are valid
 - indicates whether the account can accept direct debits. Certain accounts (e.g. savings) will not accept direct debits
 
-## Usage
+### Usage
 
 1. Get your service key from Loqate
     1. Register an [Loqate](https://www.loqate.com) account
@@ -40,7 +40,7 @@ It validates the bank details (branch sort codes and bank account numbers):
         - `gflbv-sort-code-is-correct`
         - `gflbv-account-number-is-correct`
 
-## For Developers
+### For Developers
 
 Fork the plugin on [GitHub](https://github.com/ItinerisLtd/gf-loqate-bank-verification).
 
@@ -50,7 +50,7 @@ Fork the plugin on [GitHub](https://github.com/ItinerisLtd/gf-loqate-bank-verifi
 
 - PHP v7.2
 - WordPress v4.9.10
-- [Gravity Forms](https://www.Gravity Forms.com/) v2.4.14.4
+- [Gravity Forms](https://www.gravityforms.com/) v2.4.14.4
 
 ### Does it support checking for Direct Debit capability?
 
@@ -62,11 +62,9 @@ Yes. Certain accounts (e.g. savings) will not accept direct debits. To verify ba
 
 Yes. Loqate API responses are cached in [WordPress transients](https://codex.wordpress.org/Transients_API) for an hour.
 
-To clear caches:
+To clear caches: `wp transient delete --all`
 
-```bash
-wp transient delete --all
-```
+Or, re-save service key on the setting page.
 
 ### Will you add support for older PHP versions?
 
