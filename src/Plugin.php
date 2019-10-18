@@ -16,7 +16,7 @@ use Itineris\GFLoqateBankVerification\Validators\SortCodeValidator;
 
 class Plugin
 {
-    public const VERSION = '0.3.2';
+    public const VERSION = '0.4.0';
 
     public static function run(): void
     {

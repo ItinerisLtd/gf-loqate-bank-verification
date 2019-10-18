@@ -1,10 +1,18 @@
 # Change Log
 
+## [0.4.0](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.4.0) (2019-10-18)
+[Full Changelog](https://github.com/ItinerisLtd/gf-loqate-bank-verification/compare/0.3.2...0.4.0)
+
+**Merged pull requests:**
+
+- Refactor; Validate `IsCorrect`; Clear transient caches when service key updated [\#24](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/24) ([TangRufus](https://github.com/TangRufus))
+
 ## [0.3.2](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.3.2) (2019-10-17)
 [Full Changelog](https://github.com/ItinerisLtd/gf-loqate-bank-verification/compare/0.3.1...0.3.2)
 
 **Merged pull requests:**
 
+- Version bump 0.3.2 [\#23](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/23) ([TangRufus](https://github.com/TangRufus))
 - Composer: Fix `release:build` [\#22](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/22) ([TangRufus](https://github.com/TangRufus))
 
 ## [0.3.1](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.3.1) (2019-10-17)
