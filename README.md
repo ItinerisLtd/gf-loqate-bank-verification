@@ -9,8 +9,8 @@
 [![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/gf-loqate-bank-verification?label=wp.org%20downloads&style=flat-square)](https://wordpress.org/plugins/gf-loqate-bank-verification/advanced/)
 [![GitHub License](https://img.shields.io/github/license/itinerisltd/gf-loqate-bank-verification.svg?style=flat-square)](https://github.com/ItinerisLtd/gf-loqate-bank-verification/blob/master/LICENSE)
 [![Hire Itineris](https://img.shields.io/badge/Hire-Itineris-ff69b4.svg?style=flat-square)](https://www.itineris.co.uk/contact/)
-[![Twitter Follow](https://img.shields.io/twitter/follow/itineris_ltd?style=flat-square)](https://twitter.com/itineris_ltd)
-[![Twitter Follow](https://img.shields.io/twitter/follow/TangRufus?style=flat-square)](https://twitter.com/tangrufus)
+[![Twitter Follow @itineris_ltd](https://img.shields.io/twitter/follow/itineris_ltd?style=flat-square&color=1da1f2)](https://twitter.com/itineris_ltd)
+[![Twitter Follow @TangRufus](https://img.shields.io/twitter/follow/TangRufus?style=flat-square&color=1da1f2)](https://twitter.com/tangrufus)
 
 Verify Gravity Forms bank details with Loqate bank verification API.
 
