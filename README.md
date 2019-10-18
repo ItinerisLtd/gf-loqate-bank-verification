@@ -49,7 +49,7 @@ Verify Gravity Forms bank details with Loqate bank verification API.
 [GF Loqate Bank Verification](https://github.com/ItinerisLtd/gf-loqate-bank-verification) verifies [Gravity Forms](https://www.gravityforms.com/) bank details with [Loqate bank verification API](https://www.loqate.com/resources/support/apis/BankAccountValidation/Interactive/Validate/2/).
 
 It validates the bank details (branch sort codes and bank account numbers):
-- indicates whether the account number and sortcode are valid
+- indicates whether the account number and sort code are valid
 - indicates whether the account can accept direct debits. Certain accounts (e.g. savings) will not accept direct debits
 
 ## Usage
