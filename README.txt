@@ -94,7 +94,7 @@ Thanks! Glad you like it. It's important to let my boss knows somebody is using 
 
 ### Where to report security related issues?
 
-If you discover any security related issues, please email [hello@itineris.co.uk](mailto:hello@itineris.co.uk) instead of using the issue tracker.
+If you discover any security related issues, please email [dev@itineris.co.uk](mailto:dev@itineris.co.uk) instead of using the issue tracker.
 
 == Screenshots ==
 
