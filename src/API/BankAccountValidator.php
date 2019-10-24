@@ -6,25 +6,28 @@ namespace Itineris\GFLoqateBankVerification\API;
 
 class BankAccountValidator
 {
+    public const IS_CORRECT = 'IsCorrect';
+    public const IS_DIRECT_DEBIT_CAPABLE = 'IsDirectDebitCapable';
+
     protected const ENDPOINT = 'https://api.addressy.com/BankAccountValidation/Interactive/Validate/v2.00/json3.ws';
 
     /** @var string */
-    private $key;
+    protected $key;
+    /** @var string */
+    protected $predicate;
 
-    public function __construct(string $key)
+    public function __construct(string $key, string $predicate)
     {
         $this->key = $key;
+        $this->predicate = $predicate;
     }
 
-    public function getResult(string $sortCode, string $accountNumber): Result
+    public function isValid(string $sortCode, string $accountNumber): bool
     {
         $response = $this->fetchResponse($sortCode, $accountNumber);
 
-        $data = $this->is200($response)
-            ? $this->getData($response)
-            : [];
-
-        return new Result($data);
+        return $this->is200($response)
+            && $this->getPredicateResult($response);
     }
 
     protected function fetchResponse(string $sortCode, string $accountNumber)
@@ -41,6 +44,13 @@ class BankAccountValidator
     protected function is200($response): bool
     {
         return 200 === wp_remote_retrieve_response_code($response);
+    }
+
+    protected function getPredicateResult(array $response): bool
+    {
+        $result = $this->getData($response);
+
+        return (bool) ($result[$this->predicate] ?? false);
     }
 
     protected function getData(array $response): array
