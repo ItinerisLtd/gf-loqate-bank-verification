@@ -7,12 +7,8 @@ namespace Itineris\GFLoqateBankVerification;
 use Closure;
 use GFAddOn;
 use GFForms;
+use Itineris\GFLoqateBankVerification\API\BankAccountValidator;
 use Itineris\GFLoqateBankVerification\API\TransientCachedBankAccountValidator;
-use Itineris\GFLoqateBankVerification\Validators\AbstractValidator;
-use Itineris\GFLoqateBankVerification\Validators\AccountNumberValidator;
-use Itineris\GFLoqateBankVerification\Validators\DirectDebitCapableValidator;
-use Itineris\GFLoqateBankVerification\Validators\IsCorrectValidator;
-use Itineris\GFLoqateBankVerification\Validators\SortCodeValidator;
 
 class Plugin
 {
@@ -29,29 +25,10 @@ class Plugin
             static::makeValidationClosure(
                 'gflbv-sort-code-is-correct',
                 'gflbv-account-number-is-correct',
-                esc_html__('Invalid sort code details.', 'gf-loqate-bank-verification'),
-                SortCodeValidator::class
-            )
-        );
-
-        add_filter(
-            'gform_validation',
-            static::makeValidationClosure(
-                'gflbv-sort-code-is-correct',
-                'gflbv-account-number-is-correct',
-                esc_html__('Invalid account number details.', 'gf-loqate-bank-verification'),
-                AccountNumberValidator::class
-            )
-        );
-
-        add_filter(
-            'gform_validation',
-            static::makeValidationClosure(
-                'gflbv-sort-code-is-correct',
-                'gflbv-account-number-is-correct',
-                esc_html__('Invalid account number details.', 'gf-loqate-bank-verification'),
-                IsCorrectValidator::class
-            )
+                esc_html__('Invalid account details.', 'gf-loqate-bank-verification'),
+                BankAccountValidator::IS_CORRECT
+            ),
+            1000
         );
 
         add_filter(
@@ -60,8 +37,9 @@ class Plugin
                 'gflbv-sort-code-direct-debit-capable',
                 'gflbv-account-number-direct-debit-capable',
                 esc_html__('Account is not direct debit capable.', 'gf-loqate-bank-verification'),
-                DirectDebitCapableValidator::class
-            )
+                BankAccountValidator::IS_DIRECT_DEBIT_CAPABLE
+            ),
+            500
         );
     }
 
@@ -69,13 +47,13 @@ class Plugin
         string $sortCodeCssClass,
         string $accountNumberCssClass,
         string $validationMessage,
-        string $klass
+        string $predicate
     ): Closure {
         return function (array $validationResult) use (
             $sortCodeCssClass,
             $accountNumberCssClass,
             $validationMessage,
-            $klass
+            $predicate
         ): array {
             $addOn = AddOn::get_instance();
             $key = (string) $addOn->get_plugin_setting(SettingsFields::SERVICE_KEY_NAME);
@@ -85,12 +63,11 @@ class Plugin
                 return $validationResult;
             }
 
-            /** @var AbstractValidator $validator */
-            $validator = new $klass(
+            $validator = new Validator(
                 $sortCodeCssClass,
                 $accountNumberCssClass,
-                new TransientCachedBankAccountValidator($key),
-                $validationMessage
+                $validationMessage,
+                new TransientCachedBankAccountValidator($key, $predicate)
             );
 
             return $validator->validate($validationResult);
