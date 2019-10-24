@@ -1,10 +1,22 @@
 # Change Log
 
+## [0.5.0](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.5.0) (2019-10-24)
+[Full Changelog](https://github.com/ItinerisLtd/gf-loqate-bank-verification/compare/0.4.1...0.5.0)
+
+**Merged pull requests:**
+
+- Updatte screenshot [\#32](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/32) ([TangRufus](https://github.com/TangRufus))
+- Simplify code; Revert to v0.2.1 [\#31](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/31) ([TangRufus](https://github.com/TangRufus))
+- Composer: Do not archive `tests` [\#30](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/30) ([TangRufus](https://github.com/TangRufus))
+- CircleCI: Add PHP 7.2 lint [\#29](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/29) ([TangRufus](https://github.com/TangRufus))
+- Update `hello@itineris.co.uk` -\> `dev@itineris.co.uk` [\#28](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/28) ([TangRufus](https://github.com/TangRufus))
+
 ## [0.4.1](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.4.1) (2019-10-18)
 [Full Changelog](https://github.com/ItinerisLtd/gf-loqate-bank-verification/compare/0.4.0...0.4.1)
 
 **Merged pull requests:**
 
+- Version bump 0.4.1 [\#27](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/27) ([TangRufus](https://github.com/TangRufus))
 - Fix `readme.txt` [\#26](https://github.com/ItinerisLtd/gf-loqate-bank-verification/pull/26) ([TangRufus](https://github.com/TangRufus))
 
 ## [0.4.0](https://github.com/ItinerisLtd/gf-loqate-bank-verification/tree/0.4.0) (2019-10-18)
